@@ -1,6 +1,6 @@
 name: eShopOnWeb Build and Test
 
-#Random change added to trigger workflow run
+#Random change added to trigger
 
 #Triggers (uncomment line below to use it)
 on: [push, workflow_dispatch]
