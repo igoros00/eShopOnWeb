@@ -1,6 +1,6 @@
 name: eShopOnWeb Build and Test
 
-#Test caching after pull-request
+#Test cache availability after 2nd pull-request
 #Triggers (uncomment line below to use it)
 #on: [push, workflow_dispatch]
 on: 
