@@ -31,14 +31,8 @@ jobs:
       with:
         dotnet-version: '8.0.x'
         include-prerelease: true
-    #set up dependency caching for faster builds
-    - name: Set up dependency caching
-      uses: actions/cache@v4.0.2
-      with:
-        path: ~/.nuget/packages
-        key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-nuget-
+        cache: true
+        cache-dependency-path: '**/packages.lock.json'
     #Build/Test/Publish the .net project
     - name: Build with dotnet
       run: dotnet build ./eShopOnWeb.sln --configuration Release
