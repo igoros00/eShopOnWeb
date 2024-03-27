@@ -25,20 +25,22 @@ jobs:
     steps:
     #checkout the repository
     - uses: actions/checkout@v4
-    #prepare runner for desired .net version SDK
+    #prepare runner for desired .net version SDK, caching enabled
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '8.0.x'
         include-prerelease: true
+        cache: true
+        cache-dependency-path: '**/package-lock.json'
     #set up dependency caching for faster builds
-    - name: Set up dependency caching
-      uses: actions/cache@v4.0.2
-      with:
-        path: ~/.nuget/packages
-        key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-nuget-
+    #- name: Set up dependency caching
+     # uses: actions/cache@v4.0.2
+      #with:
+       # path: ~/.nuget/packages
+        #key: ${{ runner.os }}-nuget-${{ hashFiles('**/packages.lock.json') }}
+        #restore-keys: |
+         # ${{ runner.os }}-nuget-
     #Build/Test/Publish the .net project
     - name: Build with dotnet
       run: dotnet build ./eShopOnWeb.sln --configuration Release
