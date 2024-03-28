@@ -1,13 +1,14 @@
 name: eShopOnWeb Build and Test
 
 #Test cache availability after 2nd pull-request
+
 #Triggers (uncomment line below to use it)
-#on: [push, workflow_dispatch]
-on: 
-  pull_request:
-    branches:
-      - main
-  workflow_dispatch:
+on: [push, pull_request, workflow_dispatch]
+#on: 
+ # pull_request:
+  #  branches:
+   #   - main
+  #workflow_dispatch:
 
 #Environment variables https://docs.github.com/en/actions/learn-github-actions/environment-variables
 env:
