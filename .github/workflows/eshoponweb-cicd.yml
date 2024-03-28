@@ -1,13 +1,10 @@
 name: eShopOnWeb Build and Test
 
-# Test caching restore after pull-request/merge
-#Triggers (uncomment line below to use it)
-on: [push, pull_request, workflow_dispatch]
-#on: 
- # pull_request:
-  #  branches:
-   #   - main
-  #workflow_dispatch:
+on: 
+  pull_request:
+    branches:
+      - feature-long
+  workflow_dispatch:
 
 #Environment variables https://docs.github.com/en/actions/learn-github-actions/environment-variables
 env:
