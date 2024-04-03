@@ -1,6 +1,6 @@
 name: eShopOnWeb Build and Test without Deploy
 
-#Triggers (uncomment line below to use it)
+# Triggers (uncomment line below to use it)
 on: 
   pull_request:
     branches:
